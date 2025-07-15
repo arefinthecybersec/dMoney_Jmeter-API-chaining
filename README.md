@@ -58,9 +58,11 @@ graph TD;
 ⚙️ How to Run
 
 1. Clone the Repository
-```git clone https://github.com/MdRafsanMahmud/Dmoney_Jmeter-API-chaining.git
-cd Dmoney_Jmeter-API-chaining```
+```
+- git clone https://github.com/MdRafsanMahmud/Dmoney_Jmeter-API-chaining.git
+cd Dmoney_Jmeter-API-chaining
 
+```
 2. Open in Apache JMeter
 - Version: v5.6.3 or higher
 - Load dmoney.jmx file
