@@ -48,8 +48,6 @@ graph TD;
     C --> D[Payment Thread Group];
 ```
 🧬 Flow Summary
-👨‍💼 5 Agents → deposit to 10 Customers
-
-🔁 5 Customers → send money to 10 Customers
-
-🏦 5 Customers → pay 2 Merchants
+- 👨‍💼 5 Agents → deposit to 10 Customers
+- 🔁 5 Customers → send money to 10 Customers
+- 🏦 5 Customers → pay 2 Merchants
