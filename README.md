@@ -59,7 +59,7 @@ graph TD;
 
 1. Clone the Repository
 ```
-- git clone https://github.com/MdRafsanMahmud/Dmoney_Jmeter-API-chaining.git
+git clone https://github.com/MdRafsanMahmud/Dmoney_Jmeter-API-chaining.git
 cd Dmoney_Jmeter-API-chaining
 
 ```
