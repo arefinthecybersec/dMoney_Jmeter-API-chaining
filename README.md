@@ -57,12 +57,12 @@ graph TD;
 
 ⚙️ How to Run
 
-1. Clone the Repository
+**1. Clone the Repository**
 ```
 git clone https://github.com/MdRafsanMahmud/Dmoney_Jmeter-API-chaining.git
 cd Dmoney_Jmeter-API-chaining
 ```
-2. Open in Apache JMeter
+**2. Open in Apache JMeter**
 - Version: v5.6.3 or higher
 - Load dmoney.jmx file
 - Ensure the following files are present in the same directory:
@@ -70,7 +70,7 @@ cd Dmoney_Jmeter-API-chaining
   - sendMoney.csv
   - payment.csv
 
-3. Run the Test Plan
+**3. 🛠️ Execute the Test Plan**
 - Click ▶️ in JMeter
 - Admin login executes once
 - Token shared via variable across all threads
