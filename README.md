@@ -34,19 +34,10 @@ All steps share a dynamic token, use external test data, and validate responses 
   - Customer Payment to Merchant
 - **Ramp-Up**: 120 seconds per group
 - **Loops**: Configurable (default = 1)
-- **Token Reuse**: Single admin login → token shared via JMeter Variable
+- **Token Reuse**: Individually Admin login → token shared via JMeter Variable
 - **Assertions**: Status Code `200` and success message
 
 ---
-
-## 🔄 Chaining Flow
-
-```mermaid
-graph TD;
-    A[Login as Admin] -->|Extract Token| B[Deposit Thread Group];
-    B --> C[SendMoney Thread Group];
-    C --> D[Payment Thread Group];
-```
   
 🧬 Flow Summary
 - 👨‍💼 5 Agents → deposit to 10 Customers
@@ -88,17 +79,19 @@ cd Dmoney_Jmeter-API-chaining
 | `reports/`      | Auto-generated HTML report              |
 | `screenshots/`  | Visuals of test results and performance |
 
+<img width="1366" height="716" alt="image" src="https://github.com/user-attachments/assets/53b158d7-b6f8-40c0-9153-664307c73616" />
+
 ---
 
 📸 Sample Report
 
 | View JMeter HTML Reports for response time, throughput, and transaction success rate
-📂 reports/html-report/index.html
+
 
 ---
 
 🤝 Contributors
-- Mohammad Arefin Hossain – Creator, QA Enthusiast
+- Mohammad Arefin Hossain – Creator, QA Tester
 🔗 LinkedIn
 - Salman Rahman – Reviewer
 🔗 LinkedIn
