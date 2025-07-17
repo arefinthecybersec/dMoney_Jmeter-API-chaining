@@ -91,7 +91,7 @@ This project is licensed under the MIT License – see the LICENSE file for deta
 
 ## 🤝 Contributors
 
-### 👤 Md Arefin Hossain - Author, Software Engineer in Test
+### 👤 Mohammad Arefin Hossain - Author, Seeking Opportunity as a Software Engineer in Test
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/arefin-hossain/)
 
 ### 👤 Salman Rahman - Reviewer/ Tester
