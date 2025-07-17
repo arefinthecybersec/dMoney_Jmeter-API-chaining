@@ -72,6 +72,7 @@ View Result Tree Snapshot:
 ## 📊 Reports
 
 After execution, HTML reports are generated in the /reports folder, which show metrics like throughput, latency, assertion results, and response times.
+<img width="1368" height="2508" alt="screencapture-file-G-JMeter-apache-jmeter-5-6-3-bin-JMeter-API-Chaining-Reports-index-html-2025-07-17-14_41_44" src="https://github.com/user-attachments/assets/1f29e986-6e32-4abf-ac1b-cd42a44ec367" />
 
 ---
 
