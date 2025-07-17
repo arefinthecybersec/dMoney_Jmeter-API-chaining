@@ -1,115 +1,90 @@
-# 🔗 Dmoney API Chaining with Apache JMeter
+# dMoney JMeter API Chaining Test Suite
 
-## 📝 Project Overview
-
-This project demonstrates a robust API chaining strategy using **Apache JMeter**, designed to validate a financial system’s transaction flow in **Dmoney**. The test flow simulates:
-
-- ✅ Admin Login (Token generation)
-- 💸 Agents deposit funds to customers
-- 🔄 Customers send money to others
-- 🏪 Customers pay merchants
-
-All steps share a dynamic token, use external test data, and validate responses with assertions—emulating a real-life fintech environment.
+This project demonstrates performance and functional testing of the dMoney API using Apache JMeter. It simulates real-world transaction flows including login, agent/customer creation, deposits, send money, and merchant payments, following a chained execution pattern.
 
 ---
 
-## 🔧 Tools & Technologies
+## 🔧 Prerequisites
 
-| Tool/Platform      | Purpose                               |
-|--------------------|----------------------------------------|
-| Apache JMeter       | API performance testing, chaining     |
-| CSV Data Config     | Load dynamic user/account data        |
-| JSON Extractor      | Extract tokens from login response    |
-| Header Manager      | Pass Authorization token              |
-| Response Assertion  | Verify response body/status           |
-| HTML Report         | Generate test summary                 |
+- Java 8 or above
+- Apache JMeter 5.x or above
+- Git (optional, for cloning)
 
 ---
 
-## 🧾 Test Plan Design
+## 📁 Project Structure
 
-- **Threads**: 3 total
-  - Agent Deposit
-  - Customer Send Money
-  - Customer Payment to Merchant
-- **Ramp-Up**: 120 seconds per group
-- **Loops**: Configurable (default = 1)
-- **Token Reuse**: Individually Admin login → token shared via JMeter Variable
-- **Assertions**: Status Code `200` and success message
-
----
-  
-🧬 Flow Summary
-- 👨‍💼 5 Agents → deposit to 10 Customers
-- 🔁 5 Customers → send money to 10 Customers
-- 🏦 5 Customers → pay 2 Merchants
-
----
-
-⚙️ How to Run
-
-**1. Clone the Repository**
 ```
-git clone https://github.com/MdRafsanMahmud/Dmoney_Jmeter-API-chaining.git
-cd Dmoney_Jmeter-API-chaining
+├── scripts/
+│   └── dmoney_chain_test.jmx         # Contains:
+│       ├── Login Thread Group
+│       │   └── JSON Extractor (token)
+│       ├── Agent Deposit Thread Group
+│       │   ├── CSV Data Config
+│       │   ├── HTTP Request: Deposit
+│       │   └── Response Assertion
+│       ├── Customer Send Money Thread Group
+│       └── Merchant Payment Thread Group
+├── csv/
+│   ├── sendMoney.csv
+│   └── payment.csv
+├── reports/
+├── images/
+├── README.md
 ```
-**2. Open in Apache JMeter**
-- Version: v5.6.3 or higher
-- Load dmoney.jmx file
-- Ensure the following files are present in the same directory:
-  - deposit.csv
-  - sendMoney.csv
-  - payment.csv
-
-**3. 🛠️ Execute the Test Plan**
-- Click ▶️ in JMeter
-- Admin login executes once
-- Token shared via variable across all threads
-
----
-
-📁 Project Structure
-
-| File/Folder     | Description                             |
-| --------------- | --------------------------------------- |
-| `dmoney.jmx`    | Main test plan with all thread groups   |
-| `deposit.csv`   | Agent → Customer deposit data           |
-| `sendMoney.csv` | Customer → Customer send money data     |
-| `payment.csv`   | Customer → Merchant payment data        |
-| `reports/`      | Auto-generated HTML report              |
-| `screenshots/`  | Visuals of test results and performance |
-
-<img width="1366" height="716" alt="image" src="https://github.com/user-attachments/assets/53b158d7-b6f8-40c0-9153-664307c73616" />
-
----
-
-📸 Sample Report
-
-| View JMeter HTML Reports for response time, throughput, and transaction success rate
 
 
 ---
 
-🤝 Contributors
-- Mohammad Arefin Hossain – Creator, QA Tester
-🔗 LinkedIn
-- Salman Rahman – Reviewer
-🔗 LinkedIn
+## 🚀 Getting Started
 
----
+### 1. Clone the Repository
+```bash
+git clone https://github.com/arefinthecybersec/dMoney_Jmeter-API-chaining.git
+cd dMoney_Jmeter-API-chaining
+```
+### 2. Open JMeter and Run the Test Plan
+- Open scripts/dmoney_chain_test.jmx using JMeter GUI.
+- Ensure your CSV files are correctly referenced.
+- Run the test using the green ▶️ button.
 
-⭐ Final Thoughts
+### 3. Generate Report from CLI (Optional)
+```
+jmeter -n -t scripts/dmoney_chain_test.jmx -l results.csv -e -o reports/
+```
 
-This project reflects proficiency in:
-- 🧩 API chaining with real-world financial logic
-- 📊 Data-driven testing with CSV
-- ✅ Assertions to ensure robustness
-- 📄 Report generation for performance analysis
+🔄 Test Flow Overview
 
----
+1. Login
+2. Agent to Customer [Deposit]
+3. Customer to Customer [SendMoney]
+4. Customer to Merchant [Payment]
+   
+Each stage is dependent on the previous one, making this a chained test structure.
 
-📬 **Contact Me**  
-👤 Mohammad Arefin Hossain  
-📧 arefinstudent71@gmail.com  
-📞 +880 1840873217
-🔗 [LinkedIn](https://www.linkedin.com/in/arefin-hossain/)
+🧪 Sample Output
+
+View Result Tree Snapshot:
+<img width="1366" height="716" alt="image" src="https://github.com/user-attachments/assets/61805780-30a8-4dfb-91d3-c0def1ec58f6" />
+
+📊 Reports
+
+After execution, HTML reports are generated in the /reports folder, which show metrics like throughput, latency, assertion results, and response times.
+
+📌 Notes
+
+- All requests are authenticated via token-based login.
+- You can customize the CSV files to test with your data.
+- Token is extracted and reused across thread groups.
+
+📝 License
+
+This project is licensed under the MIT License – see the LICENSE file for details.
+
+## 🤝 Contributors
+
+### 👤 Md Arefin Hossain - Author, Software Engineer in Test
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/arefin-hossain/)
+
+### 👤 Salman Rahman - Reviewer/ Tester
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github&style=flat-square)](https://github.com/salmansrabon)
