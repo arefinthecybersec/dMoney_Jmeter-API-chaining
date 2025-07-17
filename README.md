@@ -59,7 +59,7 @@ jmeter -n -t scripts/dmoney_chain_test.jmx -l results.csv -e -o reports/
 3. Customer to Customer [SendMoney]
 4. Customer to Merchant [Payment]
    
-Each stage is dependent on the previous one, making this a chained test structure.
+###### Each stage is dependent on the previous one, making this a chained test structure.
 ---
 
 ## 🧪 Sample Output
