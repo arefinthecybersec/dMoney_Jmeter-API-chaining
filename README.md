@@ -32,8 +32,6 @@ This project demonstrates performance and functional testing of the dMoney API u
 ├── images/
 ├── README.md
 ```
-
-
 ---
 
 ## 🚀 Getting Started
@@ -52,6 +50,7 @@ cd dMoney_Jmeter-API-chaining
 ```
 jmeter -n -t scripts/dmoney_chain_test.jmx -l results.csv -e -o reports/
 ```
+---
 
 ## 🔄 Test Flow Overview
 
@@ -61,15 +60,20 @@ jmeter -n -t scripts/dmoney_chain_test.jmx -l results.csv -e -o reports/
 4. Customer to Merchant [Payment]
    
 Each stage is dependent on the previous one, making this a chained test structure.
+---
 
 ## 🧪 Sample Output
 
 View Result Tree Snapshot:
 <img width="1366" height="716" alt="image" src="https://github.com/user-attachments/assets/61805780-30a8-4dfb-91d3-c0def1ec58f6" />
 
+---
+
 ## 📊 Reports
 
 After execution, HTML reports are generated in the /reports folder, which show metrics like throughput, latency, assertion results, and response times.
+
+---
 
 ## 📌 Notes
 
@@ -77,9 +81,13 @@ After execution, HTML reports are generated in the /reports folder, which show m
 - You can customize the CSV files to test with your data.
 - Token is extracted and reused across thread groups.
 
+---
+
 ## 📝 License
 
 This project is licensed under the MIT License – see the LICENSE file for details.
+
+---
 
 ## 🤝 Contributors
 
